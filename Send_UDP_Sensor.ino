@@ -31,17 +31,18 @@ void setup()
   delay(1000);
 
   Serial.println();
-  Serial.println("ESP32 WiFi UDP client - send UDP datagrams to server");
 
   WiFi.mode(WIFI_STA);  // Connect to Wifi network.
   WiFi.begin(ssid, pass);
   Serial.println("");
 
   // Wait for connection
+  Serial.println("ESP32 WiFi UDP client - Waiting to connect");
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
+  Serial.println("ESP32 WiFi UDP client - Connected to wifi");
 
   // Prints wifi info when connected
   Serial.print("\nserver IP address: ");
